@@ -1,0 +1,83 @@
+#sign-area {
+    border: 1px solid rgb(221,221,221);
+    border-radius: 5px;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-family: Avenir, sans-serif;
+}
+
+#sign-area header {
+    background-color: rgb(235,235,235);
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+#sign-area header h3 {
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+#sign-area form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px 50px 20px;
+}
+
+form .row-form {
+    border: 1px solid rgb(221,221,221);
+    border-radius: 5px 0 0 5px;
+    background-color: rgb(235,235,235);
+    padding: 5px 8px;
+    height: 20px;
+    width: 10%;
+}
+
+form input[type=submit] {
+    border: 1px solid rgb(221,221,221);
+    border-radius: 5px;
+}
+
+form p {
+    width: 90%;
+}
+
+form input {
+    border: 1px solid rgb(221,221,221);
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    color: black;
+    padding: 5px 8px;
+    height: 22px;
+}
+
+form input:focus {
+   outline: none;
+}
+
+form input[type=text] {
+    width: 90%;
+    margin-left: -1px;
+}
+
+form input[type=submit] {
+    padding: 0 20px;
+    position: relative;
+    float: right;
+    background-color: rgb(235,235,235);
+    height: 35px;
+}
+
+form select {
+    width: 100%;
+    border: 1px solid rgb(221,221,221);
+    margin: 5px 0;
+}
+
+.error {
+    color: red;
+    display: inline-block;
+}
+
+
