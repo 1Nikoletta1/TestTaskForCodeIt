@@ -104,6 +104,7 @@ $(function() {
 
         submitHandler: function(form) {
             form.submit();
+            //location.replace("companies.html");
         }
     });
 

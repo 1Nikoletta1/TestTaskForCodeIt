@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Conpanies</title>
+    <title>Companies</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/parseCompanyInfo.js" defer></script>
 </head>
 <body>
-
+    <div id="wrapper">
+        <section id="total">
+            <header>
+                <h3>Total Companies</h3>
+            </header>
+            <article>
+                <!--The total number-->
+                <div id="circle"></div>
+            </article>
+        </section>
+        <section id="list">
+            <header>
+                <h3>List of companies</h3>
+            </header>
+            <article>
+                <!--List of companies-->
+            </article>
+        </section>
+        <section id="location">
+            <header>
+                <h3>Companies by location</h3>
+            </header>
+            <article id="chart">
+                <!--Companies by location-->
+            </article>
+        </section>
+        <section id="news">
+            <header>
+                <h3>News</h3>
+            </header>
+            <article>
+                <!--News-->
+            </article>
+        </section>
+    </div>
 </body>
 </html>

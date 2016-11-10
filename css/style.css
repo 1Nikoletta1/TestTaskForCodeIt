@@ -1,3 +1,4 @@
+/*----------- Sign Up Page ---------------*/
 #sign-area {
     border: 1px solid rgb(221,221,221);
     border-radius: 5px;
@@ -80,4 +81,62 @@ form select {
     display: inline-block;
 }
 
+/*----------- Companies Page ---------------*/
+#wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
 
+section {
+    border: 1px solid rgb(221,221,221);
+    border-radius: 5px;
+    width: 45%;
+    display: inline-block;
+    margin: 20px ;
+}
+
+section header {
+    background-color: rgb(235,235,235);
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+section header h3 {
+    padding: 5px 10px;
+    margin: 0;
+}
+
+section article {
+    height: 250px;
+    overflow: scroll;
+    padding: 10px;
+}
+
+#list p{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    margin: 0;
+    padding: 10px 5px;
+}
+
+#list p:last-child {
+    border-bottom: 1px solid black;
+}
+
+#total #circle {
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+#total p {
+    margin: 0 auto;
+    font-size: 38px;
+    position: relative;
+}
