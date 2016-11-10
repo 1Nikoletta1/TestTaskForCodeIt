@@ -2,7 +2,6 @@
  * Created by veronika on 10.11.16.
  */
 
-
 var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
 var xhr = new XHR();
@@ -10,8 +9,6 @@ var xhr = new XHR();
 xhr.open('GET', 'http://codeit.pro/frontTestTask/company/getList', true);
 
 xhr.onload = function() {
-    //console.log( this.responseText );
-
     var text = JSON.parse(this.responseText);
     showItems(text);
 }

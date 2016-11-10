@@ -140,3 +140,40 @@ section article {
     font-size: 38px;
     position: relative;
 }
+
+#news img {
+    width: 40%;
+    height: auto;
+    float: left;
+}
+
+#news p {
+    float: right;
+    width: 55%;
+    height: 400px;
+    overflow: scroll;
+}
+
+#news span {
+    width: 40%;
+    float: left;
+
+}
+
+.oneNew {
+    display: block;
+    height: 400px;
+    padding: 10px;
+}
+
+.size {
+    white-space: nowrap; /* Отменяем перенос текста */
+    overflow: hidden; /* Обрезаем содержимое */
+    padding: 5px; /* Поля */
+    text-overflow: ellipsis; /* Многоточие */
+}
+
+.size:hover {
+    /*background: #f0f0f0; !* Цвет фона *!*/
+    white-space: normal; /* Обычный перенос текста */
+}
