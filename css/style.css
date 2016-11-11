@@ -90,7 +90,8 @@ form select {
 section {
     border: 1px solid rgb(221,221,221);
     border-radius: 5px;
-    width: 45%;
+    width: 420px;
+    height: 320px;
     display: inline-block;
     margin: 20px ;
 }
@@ -145,25 +146,21 @@ section article {
     width: 40%;
     height: auto;
     float: left;
+    padding-top: 5px;
 }
 
 #news p {
     float: right;
-    width: 55%;
-    height: 400px;
+    width: 40%;
+    height: 200px;
     overflow: scroll;
+    margin-right: 60px;
 }
 
 #news span {
     width: 40%;
     float: left;
-
-}
-
-.oneNew {
-    display: block;
-    height: 400px;
-    padding: 10px;
+    padding-top: 5px;
 }
 
 .size {
@@ -177,3 +174,61 @@ section article {
     /*background: #f0f0f0; !* Цвет фона *!*/
     white-space: normal; /* Обычный перенос текста */
 }
+
+/*-----------------------------*/
+/*--CAROUSEL GALLERY--*/
+/*-----------------------------*/
+
+#carousel {
+    position: relative;
+    width: 78%;
+    height: auto;
+    margin: 0 5px;
+    padding: 0 40px;
+    border: none;
+}
+
+.arrow {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 30% -15px;
+    background: none;
+    border: none;
+    display: inline-block;
+    top: 0;
+}
+
+.arrow:focus {
+    outline: none;
+}
+
+.prev {
+    left: 7px;
+    transform: rotate(180deg);
+}
+
+.next {
+    right: 7px;
+}
+
+#gallery {
+    overflow: hidden;
+}
+
+#gallery #scroll-images {
+    height: 270px;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+}
+
+#carousel .oneNew {
+    display: inline-block;
+    width: 400px;
+    height: 350px;
+}
+
