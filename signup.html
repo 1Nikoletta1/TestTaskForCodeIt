@@ -18,7 +18,7 @@
         <header>
             <h3>Sign Up</h3>
         </header>
-        <form name="signup" action="http://codeit.pro/frontTestTask/user/registration" method="post">
+        <form name="signup" method="post">
             <p>
                 <label for = "name" class="row-form">
                     <span>&#10070;</span>
@@ -47,7 +47,7 @@
                 <label for="pass" class="row-form">
                     <span>&#10033;</span>
                 </label>
-                <input id="pass" type="text" name="pass" placeholder="Password">
+                <input id="pass" type="password" name="pass" placeholder="Password">
             </p>
             <p>
                 <input type="checkbox" name="agree" value="Agree">
@@ -56,6 +56,7 @@
             <p>
                 <input type="submit" value="Send">
             </p>
+            <p class="error"></p>
         </form>
     </div>
 <script>

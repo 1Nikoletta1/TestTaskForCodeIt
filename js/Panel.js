@@ -5,6 +5,7 @@ function Panel() {
     var partners = document.querySelector('#partners article');
     var companies = [];
     var lastClicked = null;
+    var names =[];
 
     var position = 0;
     var carousel = document.getElementById('carousel');
@@ -25,26 +26,37 @@ function Panel() {
             createArr(text);
             showCompaniesByLocation();
 
-            companyList.onclick  = function(responseText) {
+            companyList.onclick  = showPartners;
+
+            function showPartners(responseText) {
+
                 var target = event.target;
 
                 if (target.tagName != 'P') return;
+                selectSingle(target);
 
-                document.querySelector('#partners').style.display = 'block';
+                document.querySelector('#partners').style.display = 'inline-block';
 
                 var newArr = createArr(text);
-                partners.innerHTML = '';
+                //console.log(newArr);
 
                 for (var i=0; i<newArr.length; i++) {
                     if(newArr[i].name == responseText.target.innerHTML) {
+                        partners.innerHTML = '';
+                        names = [];
                         for (var k=0; k<newArr[i].partners.length; k++) {
-                            partners.innerHTML += '<p>' + newArr[i].partners[k] + '</p>';
+                            names.push(newArr[i].partners[k]);
+                        }
+                        //console.log(names);
+                        var arrSorted = sortNames(names);
+                        //console.log(arrSorted);
+                        for (var h=0; h<arrSorted.length; h++) {
+                            partners.innerHTML += '<p>' + arrSorted[h] + '</p>';
                         }
                     }
                 }
-
                 lastClicked = target;
-            };
+            }
 
         };
 
@@ -88,19 +100,6 @@ function Panel() {
         }
     }
 
-    function showCompaniesByLocation() {
-
-        this.res = calcRepeatElems(companies);
-
-        var header = ['Task', 'Hours per Day'];
-        this.res.unshift(header);
-
-        //Draw chart with Google Charts
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-    }
-
     function createArr (responseText) {
 
         var totalArr =[];
@@ -125,6 +124,20 @@ function Panel() {
         }
 
         return totalArr;
+
+    }
+
+    function showCompaniesByLocation() {
+
+        this.res = calcRepeatElems(companies);
+        //console.log(this.res);
+
+        var header = ['Task', 'Hours per Day'];
+        this.res.unshift(header);
+
+        //Draw chart with Google Charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
 
     }
 
@@ -235,6 +248,23 @@ function Panel() {
             list.style.marginLeft = position + 'px';
 
         }
+    }
+
+    function selectSingle(target) {
+        deselectAll();
+        target.classList.add('selected');
+    }
+
+    function deselectAll() {
+        for (var i = 0; i < companyList.children.length; i++) {
+            companyList.children[i].classList.remove('selected');
+        }
+    }
+
+    function sortNames(arr) {
+        var arrSorted = arr.slice().sort();
+
+        return arrSorted;
     }
 
 }

@@ -2,72 +2,7 @@
  * Created by veronika on 09.11.16.
  */
 var form = document.querySelector('form');
-
-//submit.onsubmit = function() {
-//    return validate(form);
-//};
-//
-//
-//
-//function showError(container, errorMessage) {
-//    container.className = 'error';
-//    var msgElem = document.createElement('div');
-//    msgElem.className = "error-message";
-//    msgElem.innerHTML = errorMessage;
-//    container.appendChild(msgElem);
-//}
-//
-//function resetError(container) {
-//    container.className = '';
-//    if (container.lastChild.className == "error-message") {
-//        container.removeChild(container.lastChild);
-//    }
-//}
-//
-//function validate(form) {
-//    var elems = form.elements;
-//
-//    resetError(elems.name.parentNode);
-//    if (!elems.name.value) {
-//        showError(elems.name.parentNode, ' Please, write your first name');
-//    return false;
-//    }
-//
-//    resetError(elems.secondname.parentNode);
-//    if (!elems.secondname.value) {
-//        showError(elems.secondname.parentNode, ' Please, write your last name');
-//        return false;
-//    }
-//
-//    resetError(elems.email.parentNode);
-//    if (!elems.email.value) {
-//        showError(elems.email.parentNode, ' Please, write your email');
-//        return false;
-//    }
-//
-//    resetError(elems.gender.parentNode);
-//    for(var i=0; i< elems.gender.options.length; i++) {
-//        if (!elems.gender.options[i].selected) {
-//            showError(elems.gender.options[i].parentNode, ' Check the gender');
-//            return false;
-//        }
-//    }
-//
-//    resetError(elems.pass.parentNode);
-//    if (!elems.pass.value) {
-//        showError(elems.pass.parentNode, ' Please, write your password');
-//        return false;
-//    }
-//
-//    resetError(elems.agree.parentNode);
-//    if (!elems.agree.checked) {
-//        showError(elems.agree.parentNode, ' Check the agreement');
-//        return false;
-//    }
-//
-//
-//
-//}
+var message = document.querySelector('.error');
 
 $(function() {
 
@@ -103,9 +38,42 @@ $(function() {
         },
 
         submitHandler: function(form) {
-            form.submit();
-            //location.replace("companies.html");
+
+            var XHRReg = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+            var xhrReg = new XHRReg();
+
+            xhrReg.open('GET', 'http://codeit.pro/frontTestTask/user/registration', true);
+
+            xhrReg.onload = function () {
+
+                console.log(xhrReg.statusText);
+
+                if (xhrReg.statusText === 'OK') {
+                    form.submit();
+                    window.open("companies.html");
+                }
+
+                if (xhrReg.statusText === 'Form Error') {
+                    message.innerHTML += 'Email already exists.';
+                }
+
+                if (xhrReg.statusText === 'Error') {
+                    message.innerHTML += 'You have error in your form.';
+                }
+            };
+
+            xhrReg.onerror = function () {
+                alert('Ошибка ' + this.status);
+            };
+
+            xhrReg.send();
+
         }
     });
 
 });
+
+
+
+

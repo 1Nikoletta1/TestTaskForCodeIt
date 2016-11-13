@@ -83,8 +83,14 @@ form select {
 
 /*----------- Companies Page ---------------*/
 #wrapper {
+    font-family: Avenir, sans-serif;
     width: 70%;
     margin: 0 auto;
+}
+
+#centered {
+    margin: 0 auto;
+    text-align: center;
 }
 
 section {
@@ -113,6 +119,10 @@ section article {
     padding: 10px;
 }
 
+.selected {
+    color: #37B82C;
+}
+
 #list p,
 #partners p {
     border-right: 1px solid black;
@@ -120,12 +130,18 @@ section article {
     border-top: 1px solid black;
     margin: 0;
     padding: 10px 5px;
+    text-align: left;
 }
 
 #list p:last-child,
 #partners p:last-child {
     border-bottom: 1px solid black;
 }
+
+#partners p:nth-child(2n) {
+    background: #D1D1D1;
+}
+
 
 #total #circle {
     border: 1px solid black;
@@ -136,6 +152,7 @@ section article {
     text-align: center;
     padding-top: 100px;
     box-sizing: border-box;
+    background: #D1D1D1;
 }
 
 #total p {
@@ -157,12 +174,15 @@ section article {
     height: 200px;
     overflow: scroll;
     margin-right: 60px;
+    text-align: left;
 }
 
 #news span {
     width: 40%;
     float: left;
     padding-top: 5px;
+    text-align: left;
+    white-space: normal;
 }
 
 .size {
@@ -173,18 +193,22 @@ section article {
 }
 
 .size:hover {
-    /*background: #f0f0f0;*/
     white-space: normal; /* Обычный перенос текста */
-    padding: 8px;
+    padding: 5px;
 }
 
 .companyName:hover {
     cursor: pointer;
 }
 
+.companyName:nth-child(2n) {
+    background: #D1D1D1;
+}
+
 #partners {
-    width: 880px;
+    width: 890px;
     display: none;
+    margin: 20px;
 }
 
 /*-----------------------------*/
@@ -247,5 +271,43 @@ section article {
 #partners p{
     font-size: 18px;
 }
+
+@media screen and (max-width: 1342px)  {
+    #wrapper {
+       width: 100%;
+    }
+}
+
+@media screen  and (max-width: 944px)  {
+    #partners {
+        width: 420px;
+    }
+}
+
+@media screen  and (max-width: 470px) and (min-width: 320px) {
+    section {
+        width: 90%;
+    }
+
+    #partners {
+        width: 90%;
+    }
+
+    #news img {
+        display: none;
+    }
+
+    #news p {
+        float: left;
+        width: 60%;
+        height: 150px;
+    }
+
+    #news span {
+        width: 60%;
+    }
+
+}
+
 
 
