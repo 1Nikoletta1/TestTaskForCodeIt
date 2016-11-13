@@ -113,7 +113,8 @@ section article {
     padding: 10px;
 }
 
-#list p{
+#list p,
+#partners p {
     border-right: 1px solid black;
     border-left: 1px solid black;
     border-top: 1px solid black;
@@ -121,7 +122,8 @@ section article {
     padding: 10px 5px;
 }
 
-#list p:last-child {
+#list p:last-child,
+#partners p:last-child {
     border-bottom: 1px solid black;
 }
 
@@ -143,7 +145,7 @@ section article {
 }
 
 #news img {
-    width: 40%;
+    width: 25%;
     height: auto;
     float: left;
     padding-top: 5px;
@@ -171,8 +173,18 @@ section article {
 }
 
 .size:hover {
-    /*background: #f0f0f0; !* Цвет фона *!*/
+    /*background: #f0f0f0;*/
     white-space: normal; /* Обычный перенос текста */
+    padding: 8px;
+}
+
+.companyName:hover {
+    cursor: pointer;
+}
+
+#partners {
+    width: 880px;
+    display: none;
 }
 
 /*-----------------------------*/
@@ -231,4 +243,9 @@ section article {
     width: 400px;
     height: 350px;
 }
+
+#partners p{
+    font-size: 18px;
+}
+
 
